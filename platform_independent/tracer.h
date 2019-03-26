@@ -2,11 +2,10 @@
   \file tracer.h
 
   Created on: 13 בדצמ 2018
-  \author     Admin
+  \author     Tzahi Manistersky
 
 Copyright (c) 2018
 Provided as is according to MIT open source license
-GIT repository: https://github.com/TzahiM/TestAbles.git
 Tzahi Manistersky.
 
 mailto:tzahimanmobile@gmail.com
@@ -29,7 +28,7 @@ In this reference implementation the TRACE duration is 12 t0 14 microsecond (see
 #define SOURCES_TRACER_H_
 
 // ===========================< Header Files >============================
-#include <stdint.h>
+#include "TTypes.h"
 
 
 //=======================< Constant Definitions >=======================
@@ -45,9 +44,9 @@ In this reference implementation the TRACE duration is 12 t0 14 microsecond (see
     register s_trace* p_next_trace = &p_tracer->traces_array[p_tracer->next_trace_index & NUM_TRACE_MASK];\
     p_next_trace->timestamp = tracer_get_timestamp() ;                                                    \
     p_next_trace->p_latest_string = string           ;                                                    \
-    p_next_trace->parameter_1     = (uint32_t)p1     ;                                                    \
-    p_next_trace->parameter_2     = (uint32_t)p2     ;                                                    \
-    p_next_trace->parameter_3     = (uint32_t)p3     ;                                                    \
+    p_next_trace->parameter_1     = (TU32)p1     ;                                                    \
+    p_next_trace->parameter_2     = (TU32)p2     ;                                                    \
+    p_next_trace->parameter_3     = (TU32)p3     ;                                                    \
     p_tracer->next_trace_index += p_tracer->increment;                                                    \
 }
 
@@ -66,11 +65,11 @@ In this reference implementation the TRACE duration is 12 t0 14 microsecond (see
 
 typedef struct
 {
-    uint32_t    timestamp      ;
-    const char* p_latest_string;
-    uint32_t    parameter_1    ;
-    uint32_t    parameter_2    ;
-    uint32_t    parameter_3    ;
+    TU32       timestamp      ;
+    const TI8* p_latest_string;
+    TU32    parameter_1    ;
+    TU32    parameter_2    ;
+    TU32    parameter_3    ;
 }s_trace;
 
 #define MAX_NUM_TRACE  0x200 //! should be a power of 2
@@ -79,8 +78,8 @@ typedef struct
 typedef struct
 {
     s_trace  traces_array[MAX_NUM_TRACE];
-    uint32_t next_trace_index;
-    uint8_t  increment;
+    TU32 next_trace_index;
+    TU8  increment;
 }s_tracer;
 
 #pragma pack() //revert to system default memory bytes alignments
@@ -95,7 +94,7 @@ void tracer_print_all();
 
 void tracer_set_enabling( int is_enabled);
 
-uint32_t tracer_get_timestamp();//platform specific timestamping method
+TU32 tracer_get_timestamp();//platform specific timestamping method
 
 // ===================< Global Variable Declaration >=====================
 #ifdef tracer_UNFOLD

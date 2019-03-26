@@ -116,7 +116,7 @@ tracer_get_timestamp() duration is -4 microseconds
 // ====================< Private Data Definition >========================
 
 // ===================< Private Functions Implementation >=====================
-uint32_t prev_ts = 0;//!< used for calculating dime differences between current and previous trace
+TU32 prev_ts = 0;//!< used for calculating dime differences between current and previous trace
 /*!
  * print of a single trace in ascii format
  * @param p_trace_to_print
