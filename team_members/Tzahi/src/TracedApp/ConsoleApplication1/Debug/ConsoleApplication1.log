@@ -1,2 +1,3 @@
-﻿  ConsoleApplication1.cpp
+﻿  tracer.c
+D:\Projects\git_clones\Tracer\platform_independent\tracer.c(136): warning C4013: 'printf' undefined; assuming extern returning int
   ConsoleApplication1.vcxproj -> D:\Projects\git_clones\Tracer\team_members\Tzahi\src\TracedApp\ConsoleApplication1\Debug\ConsoleApplication1.exe

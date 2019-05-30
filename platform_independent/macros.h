@@ -132,7 +132,8 @@ mailto:tzahimanmobile@gmail.com
     }                         \
 }
 
-#define DEBUG_OUTPUT cli_printf
+//when porting, implement your own print function
+#define DEBUG_OUTPUT printf
 
 //Types
 

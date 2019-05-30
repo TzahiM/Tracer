@@ -43,7 +43,7 @@ In this reference implementation the TRACE duration is 12 t0 14 microsecond (see
 {\
     register s_trace* p_next_trace = &p_tracer->traces_array[p_tracer->next_trace_index & NUM_TRACE_MASK];\
     p_next_trace->timestamp = tracer_get_timestamp() ;                                                    \
-    p_next_trace->p_latest_string = string           ;                                                    \
+    p_next_trace->p_latest_string = (const TI8*)(string)           ;                                                    \
     p_next_trace->parameter_1     = (TU32)p1     ;                                                    \
     p_next_trace->parameter_2     = (TU32)p2     ;                                                    \
     p_next_trace->parameter_3     = (TU32)p3     ;                                                    \
@@ -92,7 +92,7 @@ extern "C" {
 
 void tracer_print_all();
 
-void tracer_set_enabling( int is_enabled);
+void tracer_set_enabling(TI32 is_enabled);
 
 TU32 tracer_get_timestamp();//platform specific timestamping method
 

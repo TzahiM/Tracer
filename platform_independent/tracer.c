@@ -121,7 +121,7 @@ TU32 prev_ts = 0;//!< used for calculating dime differences between current and 
  * print of a single trace in ascii format
  * @param p_trace_to_print
  */
-static void tracer_print_single_trace(s_trace* p_trace_to_print)
+void tracer_print_single_trace(s_trace* p_trace_to_print)
 {
     if (p_trace_to_print == NULL || p_trace_to_print->p_latest_string == 0)
     {
@@ -156,17 +156,17 @@ void tracer_print_all()
     //!< if there had already been a wrap around whithin traces array we start with the next trace to use  which is the first known traced entry
     if ((p_tracer->next_trace_index & NUM_TRACE_MASK) != 0)
     {
-        for (int var = (p_tracer->next_trace_index + 1) & NUM_TRACE_MASK; var < NUM_ARRAY_ELEMENTS(p_tracer->traces_array); var++)
+        for (TI32 var = (p_tracer->next_trace_index + 1) & NUM_TRACE_MASK; var < NUM_ARRAY_ELEMENTS(p_tracer->traces_array); var++)
         {
-            tracer_print_single_trace( &p_tracer->traces_array[var]);
+            tracer_print_single_trace( (s_trace*)&p_tracer->traces_array[var]);
         }//end of for (var = 0; var < max; var++)
     }//end of if ((p_tracer->next_trace_index & NUM_TRACE_MASK) != 0))
 
 
     //!< iterate from the begining of the tracs array
-    for (int var = 0 ; var < (p_tracer->next_trace_index  & NUM_TRACE_MASK) ; var++)
+    for (TI32 var = 0 ; var < (TI32)(p_tracer->next_trace_index  & NUM_TRACE_MASK) ; var++)
     {
-        tracer_print_single_trace( &p_tracer->traces_array[var]);
+        tracer_print_single_trace( (s_trace*)&p_tracer->traces_array[var]);
     }//end of for (var = 0; var < max; var++)
 }
 
@@ -175,7 +175,7 @@ void tracer_print_all()
  * good idea is to start before a posisble event and stop after the first encountered problem
  * @param is_enabled
  */
-void tracer_set_enabling( int is_enabled)
+void tracer_set_enabling( TI32 is_enabled)
 {
     if (is_enabled)
     {
@@ -188,6 +188,11 @@ void tracer_set_enabling( int is_enabled)
     }
 
 }
-
+TU32 g_timestamp = 0;
+TU32 tracer_get_timestamp()//platform specific timestamping method
+{
+	g_timestamp++;
+	return(g_timestamp);
+}
 
 //End of tracer.c file
