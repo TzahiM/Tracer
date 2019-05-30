@@ -1,0 +1,18 @@
+Number of arguments: 1 arguments.
+Argument List: ['tracer_test_script.py']
+0 :expecting: 'start\n'
+OK
+1 :expecting: 'end\n'
+OK
+2 :expecting: '        1:(        1)      9      4      0 main line 9\n'
+OK
+3 :expecting: '\n'
+OK
+4 :expecting: '        2:(        1)     11      0      0 main line 11\n'
+OK
+5 :expecting: '\n'
+OK
+6 :expecting: '        3:(        1)     13      0      0 main line 13\n'
+OK
+7 :expecting: '\n'
+OK

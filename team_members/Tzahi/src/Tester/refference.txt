@@ -1,7 +1,5 @@
-2147283933:(       ?)    38      0      0 main line 38
-2147283933:(       0)    40      0      0 main line 40
-2147283933:(       0)    42      0      0 main line 42
-2147283933:(       0)    42      0      0 main line 42
-2147283933:(       0)    42      0      0 main line 42
-2147283933:(       0)    42      0      0 main line 42
-sfsfsf
+start
+end
+        1:(        1)      9      4      0 main line 9
+        2:(        1)     11      0      0 main line 11
+        3:(        1)     13      0      0 main line 13
