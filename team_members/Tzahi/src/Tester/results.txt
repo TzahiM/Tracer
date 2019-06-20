@@ -3,7 +3,7 @@ Argument List: ['tracer_test_script.py']
 0 :expecting: 'start\n'
 OK
 1 :expecting: 'end\n'
-OK
+but recived: 'endiing\n'
 2 :expecting: '        1:(        1)      9      4      0 main line 9\n'
 OK
 3 :expecting: '\n'

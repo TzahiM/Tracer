@@ -3,13 +3,14 @@
 
 #include <stdio.h>
 #include "tracer.h"
+
 int main()
 {
-	tracer_set_enabling(1);
+tracer_set_enabling(1);
 	TRACE( __FUNCTION__, __LINE__, sizeof(int), 0);
 	printf("start\n");
 	TRACE(__FUNCTION__, __LINE__, 0, 0);
-	printf("end\n");
+	printf("endiing\n");
 	TRACE(__FUNCTION__, __LINE__, 0, 0);
 	tracer_set_enabling(0);
 	tracer_print_all();

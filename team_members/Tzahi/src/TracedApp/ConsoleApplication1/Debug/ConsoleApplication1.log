@@ -1,3 +1,4 @@
-﻿  tracer.c
-D:\Projects\git_clones\Tracer\platform_independent\tracer.c(136): warning C4013: 'printf' undefined; assuming extern returning int
+﻿  ConsoleApplication1.cpp
+D:\Projects\git_clones\Tracer\team_members\Tzahi\src\TracedApp\ConsoleApplication1\ConsoleApplication1.cpp(51): warning C4086: expected pragma parameter to be '1', '2', '4', '8', or '16'
+D:\Projects\git_clones\Tracer\team_members\Tzahi\src\TracedApp\ConsoleApplication1\ConsoleApplication1.cpp(61): warning C4267: '=': conversion from 'size_t' to 'unsigned char', possible loss of data
   ConsoleApplication1.vcxproj -> D:\Projects\git_clones\Tracer\team_members\Tzahi\src\TracedApp\ConsoleApplication1\Debug\ConsoleApplication1.exe

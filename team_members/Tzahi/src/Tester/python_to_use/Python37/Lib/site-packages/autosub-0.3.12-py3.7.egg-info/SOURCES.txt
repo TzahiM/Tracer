@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+autosub/__init__.py
+autosub/constants.py
+autosub/formatters.py
+autosub.egg-info/PKG-INFO
+autosub.egg-info/SOURCES.txt
+autosub.egg-info/dependency_links.txt
+autosub.egg-info/pbr.json
+autosub.egg-info/requires.txt
+autosub.egg-info/top_level.txt
+bin/autosub
