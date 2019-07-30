@@ -10,7 +10,7 @@ tracer_set_enabling(1);
 	TRACE( __FUNCTION__, __LINE__, sizeof(int), 0);
 	printf("start\n");
 	TRACE(__FUNCTION__, __LINE__, 0, 0);
-	printf("endiing\n");
+	printf("end\n");
 	TRACE(__FUNCTION__, __LINE__, 0, 0);
 	tracer_set_enabling(0);
 	tracer_print_all();
