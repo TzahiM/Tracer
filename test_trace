@@ -1,0 +1,11 @@
+ Global
+           atomic<int> x, y;
+
+Thread 1                            Thread 2
+x.store(17,memory_order_relaxed);   cout << y.load(memory_order_relaxed) << " ";
+y.store(37,memory_order_relaxed);   cout << x.load(memory_order_relaxed) << endl;
+
+
+
+//void tracer_print_all();
+//void tracer_set_enabling( int is_enabled);
